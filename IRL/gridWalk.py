@@ -111,7 +111,6 @@ class bicycleGridRiding(gym.Env):
         return {
             "agent": self._agent_location,
             "target": self._target_location,
-            "roadDense": self.attrTable['roadDense'][state],
             "Road":self.attrTable['Road'][state],
             "Build":self.attrTable['Build'][state],
             "Vegetation":self.attrTable['Vegetation'][state],
@@ -130,11 +129,8 @@ class bicycleGridRiding(gym.Env):
             "Train":self.attrTable['Train'][state],
             "MotorCycle":self.attrTable['MotorCycle'][state],
             "Bicycle":self.attrTable['Bicycle'][state],
-            "Sidewalk":self.attrTable['Sidewalk'][state],
-            "Slope":self.attrTable['Slope'][state],
-            "NDVI":self.attrTable['NDVI'][state],
-            "POI":self.attrTable['POI'][state]
-                }
+            "Sidewalk":self.attrTable['Sidewalk'][state]
+            }
 
     def _get_info(self):
         agentLoc = np.array(self.state_to_coordinate(self._agent_location))
